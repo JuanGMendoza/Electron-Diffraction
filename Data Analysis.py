@@ -103,8 +103,6 @@ def N2():
         xValues[i] = PLANCK / (momentum[i])
 
         
-
-    
     plt.errorbar(xValues, sinTheta, yerr = errorY, fmt = 'o', label = 'Data')
 
     slope = np.polyfit(xValues, sinTheta,1)
@@ -118,6 +116,7 @@ def N2():
     plt.show()
     
 def Voltage_to_Momentum(Voltage):
+    
     K_Energy = Voltage #eV
 
     fraction =   ENERGY_ELECTRON / (K_Energy + ENERGY_ELECTRON)
@@ -138,9 +137,7 @@ def error_prop(s, theta):
     dArctan = (1/(1 + (np.sin(s/r)/(1 + np.cos(s/r))))) * dTheta
     dSinFinal = np.cos(theta) * dArctan
     return dSinFinal
-N2()
 
-#round(4.33, 1)
 
 
 
